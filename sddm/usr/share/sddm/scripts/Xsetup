@@ -1,0 +1,11 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+# xrandr --output eDP-1 --mode 3840x2400 --rate 59.99
+
+# x15 with 3840x2400:
+# xrandr --output edP-1 --mode 1920x1200 --rate 59.95
+xrandr --output eDP-1 --mode 1920x1200 --rate 59.98
+
+# x17 with only 1920x1200:
+# xrandr --output eDP-1 --mode 1920x1200 --rate 59.88
+

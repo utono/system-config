@@ -1,0 +1,9 @@
+/* https://github.com/joshrosso/dotcom/blob/main/content/docs/2020/2020-05-06-linux-hypervisor-setup.md */
+/* Allow users in wheel group to manage the libvirt
+daemon without authentication */
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.libvirt.unix.manage" &&
+        subject.isInGroup("wheel")) {
+            return polkit.Result.YES;
+    }
+});
