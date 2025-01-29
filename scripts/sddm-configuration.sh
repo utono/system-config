@@ -9,7 +9,7 @@ fi
 # Function to sync the Xsetup file
 sync_xsetup_file() {
     local utono_path="$1"
-    local src="${utono_path}/system-configs/sddm/usr/share/sddm/scripts/Xsetup"
+    local src="${utono_path}/system-config/sddm/usr/share/sddm/scripts/Xsetup"
     local dest="/usr/share/sddm/scripts/Xsetup"
 
     # Backup the existing Xsetup file if it exists

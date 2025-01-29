@@ -46,12 +46,12 @@ log_rsync() {
 configure_nvidia_blacklist_and_removal() {
     local utono_path="$1"
 
-    rsync -av --chown=root:root "${utono_path}/system-configs/modprobe.d/etc/modprobe.d/blacklist-nvidia.conf" /etc/modprobe.d/ && \
-        log_rsync "${utono_path}/system-configs/modprobe.d/etc/modprobe.d/blacklist-nvidia.conf" "/etc/modprobe.d/" || \
+    rsync -av --chown=root:root "${utono_path}/system-config/modprobe.d/etc/modprobe.d/blacklist-nvidia.conf" /etc/modprobe.d/ && \
+        log_rsync "${utono_path}/system-config/modprobe.d/etc/modprobe.d/blacklist-nvidia.conf" "/etc/modprobe.d/" || \
         FAILED_COMMANDS+=("rsync blacklist-nvidia.conf")
 
-    rsync -av --chown=root:root "${utono_path}/system-configs/udev/etc/udev/rules.d/00-remove-nvidia.rules" /etc/udev/rules.d/ && \
-        log_rsync "${utono_path}/system-configs/udev/etc/udev/rules.d/00-remove-nvidia.rules" "/etc/udev/rules.d/" || \
+    rsync -av --chown=root:root "${utono_path}/system-config/udev/etc/udev/rules.d/00-remove-nvidia.rules" /etc/udev/rules.d/ && \
+        log_rsync "${utono_path}/system-config/udev/etc/udev/rules.d/00-remove-nvidia.rules" "/etc/udev/rules.d/" || \
         FAILED_COMMANDS+=("rsync udev rules")
 }
 

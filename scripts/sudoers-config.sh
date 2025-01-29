@@ -13,8 +13,8 @@ sync_sudoers() {
         exit 1
     fi
 
-    if [ -d "${utono_path}/system-configs/sudoers.d/etc/sudoers.d/" ]; then
-        sudo rsync -av --chown=root:root "${utono_path}/system-configs/sudoers.d/etc/sudoers.d/" /etc/sudoers.d/
+    if [ -d "${utono_path}/system-config/sudoers.d/etc/sudoers.d/" ]; then
+        sudo rsync -av --chown=root:root "${utono_path}/system-config/sudoers.d/etc/sudoers.d/" /etc/sudoers.d/
         sudo chmod 440 /etc/sudoers.d/*
         echo "sudoers.d configurations synced successfully."
     else
