@@ -9,3 +9,10 @@ xrandr --output eDP-1 --mode 1920x1200 --rate 59.98
 # x17 with only 1920x1200:
 # xrandr --output eDP-1 --mode 1920x1200 --rate 59.88
 
+export XKB_DEFAULT_LAYOUT=real_prog_dvorak  
+setxkbmap -layout real_prog_dvorak -v  
+
+[Autologin]  
+User=mlj  
+Session=hyprland  
+
