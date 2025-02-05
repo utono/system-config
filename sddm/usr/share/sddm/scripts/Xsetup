@@ -1,18 +1,10 @@
 #!/bin/sh
-# Xsetup - run as root before the login dialog appears
-# xrandr --output eDP-1 --mode 3840x2400 --rate 59.99
 
-# x15 with 3840x2400:
-# xrandr --output edP-1 --mode 1920x1200 --rate 59.95
+# Set display resolution and refresh rate
 xrandr --output eDP-1 --mode 1920x1200 --rate 59.98
 
-# x17 with only 1920x1200:
-# xrandr --output eDP-1 --mode 1920x1200 --rate 59.88
+# Set keyboard layout environment variable
+export XKB_DEFAULT_LAYOUT=real_prog_dvorak
 
-export XKB_DEFAULT_LAYOUT=real_prog_dvorak  
-setxkbmap -layout real_prog_dvorak -v  
-
-[Autologin]  
-User=mlj  
-Session=hyprland  
-
+# Apply keyboard layout settings
+setxkbmap -layout real_prog_dvorak -v
