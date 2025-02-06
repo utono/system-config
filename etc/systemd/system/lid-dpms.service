@@ -5,8 +5,8 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'sleep 1; vbetool dpms off || echo 1 > /sys/class/backlight/*/bl_power'
-ExecStop=/bin/bash -c 'vbetool dpms on || echo 0 > /sys/class/backlight/*/bl_power'
+ExecStart=/bin/bash -c 'sleep 1; echo 1 > /sys/class/backlight/*/bl_power'
+ExecStop=/bin/bash -c 'echo 0 > /sys/class/backlight/*/bl_power'
 RemainAfterExit=yes
 
 [Install]
