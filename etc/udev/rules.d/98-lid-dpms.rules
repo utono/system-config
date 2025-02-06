@@ -1,0 +1,1 @@
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", KERNEL=="LID", ENV{SYSTEMD_WANTS}="lid-dpms.service"
