@@ -1,1 +1,1 @@
-KERNEL=="event*", ATTRS{DEVNAME}=="/dev/input/event27", GROUP="input", MODE="0660"
+KERNEL=="event*", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="9021", GROUP="input", MODE="0660"
