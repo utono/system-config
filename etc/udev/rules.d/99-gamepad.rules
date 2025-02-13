@@ -1,1 +1,3 @@
 KERNEL=="event*", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="9021", GROUP="input", MODE="0660"
+SUBSYSTEM=="input", ATTRS{id/vendor}=="2dc8", ATTRS{id/product}=="9021", ENV{ID_INPUT_KEYBOARD}="", ENV{ID_INPUT_JOYSTICK}=""
+
