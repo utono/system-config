@@ -1,1 +1,0 @@
-KERNEL=="event*", ATTRS{DEVNAME}=="/dev/input/event27", GROUP="input", MODE="0660"
