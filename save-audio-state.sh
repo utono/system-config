@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
 
-# Save current audio configuration and firmware status for future troubleshooting.
-# Run with: ./save-audio-state.sh ~/audio-logs/2025-06-18-audio.txt
+# ~/utono/system-config/save-audio-state.sh
+#
+# 📋 Save your system's current audio state to a log file.
+#
+# Usage:
+#   ~/utono/system-config/save-audio-state.sh ~/audio-logs/YYYY-MM-DD-audio.txt
+#
+# Example:
+#   ~/utono/system-config/save-audio-state.sh ~/audio-logs/2025-06-18-audio.txt
+#
+# This script gathers kernel, firmware, audio devices, and service info
+# for future debugging in case audio stops working.
 
 outfile="$1"
 
 if [[ -z "$outfile" ]]; then
-  echo "Usage: $0 <output-file-path>"
+  echo "❌ Usage: $0 <output-log-file-path>"
   exit 1
 fi
 
@@ -16,7 +26,7 @@ mkdir -p "$(dirname "$outfile")"
   echo "===================== System Info ====================="
   uname -a
   echo
-  pacman -Q linux linux-firmware sof-firmware || true
+  pacman -Q linux linux-firmware sof-firmware 2>/dev/null || true
 
   echo
   echo "===================== pactl Info ====================="
@@ -30,7 +40,7 @@ mkdir -p "$(dirname "$outfile")"
 
   echo
   echo "===================== ALSA PCI Audio ====================="
-  sudo lspci | grep -i audio
+  lspci | grep -i audio
 
   echo
   echo "===================== PipeWire Services ====================="
@@ -46,4 +56,4 @@ mkdir -p "$(dirname "$outfile")"
 
 } | tee "$outfile"
 
-echo "✅ Saved audio state to: $outfile"
+echo "✅ Audio state saved to: $outfile"
