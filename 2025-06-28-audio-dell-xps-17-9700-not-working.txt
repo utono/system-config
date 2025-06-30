@@ -1,0 +1,135 @@
+===================== System Info =====================
+Linux xps17-2tb 6.15.3-3-cachyos #1 SMP PREEMPT_DYNAMIC Tue, 24 Jun 2025 16:15:18 +0000 x86_64 GNU/Linux
+
+linux-firmware 1:20250508.788aadc8-3
+sof-firmware 2025.05-1
+
+===================== pactl Info =====================
+Server String: /run/user/1000/pulse/native
+Library Protocol Version: 35
+Server Protocol Version: 35
+Is Local: yes
+Client Index: 79
+Tile Size: 65472
+User Name: mlj
+Host Name: xps17-2tb
+Server Name: PulseAudio (on PipeWire 1.4.5)
+Server Version: 15.0.0
+Default Sample Specification: float32le 2ch 48000Hz
+Default Channel Map: front-left,front-right
+Default Sink: auto_null
+Default Source: auto_null.monitor
+Cookie: c598:d2fd
+
+54	auto_null	PipeWire	float32le 2ch 48000Hz	SUSPENDED
+
+===================== aplay Devices =====================
+**** List of PLAYBACK Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 7: HDMI 1 [HDMI 1]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 8: HDMI 2 [HDMI 2]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 9: HDMI 3 [HDMI 3]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: sofsoundwire [sof-soundwire], device 0: Jack Out (*) []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: sofsoundwire [sof-soundwire], device 2: Speaker (*) []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: sofsoundwire [sof-soundwire], device 5: HDMI 1 (*) []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: sofsoundwire [sof-soundwire], device 6: HDMI 2 (*) []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: sofsoundwire [sof-soundwire], device 7: HDMI 3 (*) []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: sofsoundwire [sof-soundwire], device 31: Jack Out DeepBuffer (*) []
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+===================== ALSA PCI Audio =====================
+00:1f.3 Multimedia audio controller: Intel Corporation Comet Lake PCH cAVS
+01:00.1 Audio device: NVIDIA Corporation TU106 High Definition Audio Controller (rev a1)
+
+===================== PipeWire Services =====================
+● pipewire.service - PipeWire Multimedia Service
+     Loaded: loaded (/usr/lib/systemd/user/pipewire.service; disabled; preset: enabled)
+     Active: active (running) since Sat 2025-06-28 07:47:49 CDT; 5h 16min ago
+ Invocation: 62fffa38cfaf445eae9a793a1e2d88c1
+TriggeredBy: ● pipewire.socket
+   Main PID: 1072 (pipewire)
+      Tasks: 3 (limit: 76504)
+     Memory: 5.7M (peak: 6.1M)
+        CPU: 172ms
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/pipewire.service
+             └─1072 /usr/bin/pipewire
+
+Jun 28 07:47:49 xps17-2tb systemd[910]: Started PipeWire Multimedia Service.
+
+● pipewire-pulse.service - PipeWire PulseAudio
+     Loaded: loaded (/usr/lib/systemd/user/pipewire-pulse.service; disabled; preset: enabled)
+     Active: active (running) since Sat 2025-06-28 13:02:57 CDT; 1min 18s ago
+ Invocation: c842116d84bc4bab8056eae1c961df1d
+TriggeredBy: ● pipewire-pulse.socket
+   Main PID: 4778 (pipewire-pulse)
+      Tasks: 3 (limit: 76504)
+     Memory: 7.4M (peak: 9M)
+        CPU: 592ms
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/pipewire-pulse.service
+             └─4778 /usr/bin/pipewire-pulse
+
+Jun 28 13:02:57 xps17-2tb systemd[910]: Started PipeWire PulseAudio.
+
+● wireplumber.service - Multimedia Service Session Manager
+     Loaded: loaded (/usr/lib/systemd/user/wireplumber.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2025-06-28 07:47:49 CDT; 5h 16min ago
+ Invocation: b9a19520e9894155a8fe23ffb8f7dd28
+   Main PID: 1073 (wireplumber)
+      Tasks: 6 (limit: 76504)
+     Memory: 75.6M (peak: 76.6M)
+        CPU: 193ms
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/wireplumber.service
+             └─1073 /usr/bin/wireplumber
+
+Jun 28 07:47:49 xps17-2tb systemd[910]: Started Multimedia Service Session Manager.
+Jun 28 07:47:50 xps17-2tb wireplumber[1073]: default: Failed to get percentage from UPower: org.freedesktop.DBus.Error.NameHasNoOwner
+Jun 28 07:47:50 xps17-2tb wireplumber[1073]: wp-device: SPA handle 'api.libcamera.enum.manager' could not be loaded; is it installed?
+Jun 28 07:47:50 xps17-2tb wireplumber[1073]: s-monitors-libcamera: PipeWire's libcamera SPA plugin is missing or broken. Some camera types may not be supported.
+
+===================== dmesg: audio =====================
+[    4.206634] snd_hda_intel 0000:01:00.1: Handle vga_switcheroo audio client
+[    4.639590] sof-audio-pci-intel-cnl 0000:00:1f.3: enabling device (0000 -> 0002)
+[    4.639682] sof-audio-pci-intel-cnl 0000:00:1f.3: DSP detected with PCI class/subclass/prog-if 0x040100
+[    4.639713] sof-audio-pci-intel-cnl 0000:00:1f.3: bound 0000:00:02.0 (ops intel_audio_component_bind_ops [i915])
+[    4.646233] sof-audio-pci-intel-cnl 0000:00:1f.3: use msi interrupt mode
+[    4.657967] sof-audio-pci-intel-cnl 0000:00:1f.3: hda codecs found, mask 4
+[    4.657969] sof-audio-pci-intel-cnl 0000:00:1f.3: BT link detected in NHLT tables: 0x0
+[    4.657971] sof-audio-pci-intel-cnl 0000:00:1f.3: DMICs detected in NHLT tables: 0
+[    4.662635] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware paths/files for ipc type 0:
+[    4.662638] sof-audio-pci-intel-cnl 0000:00:1f.3:  Firmware file:     intel/sof/sof-cml.ri
+[    4.662639] sof-audio-pci-intel-cnl 0000:00:1f.3:  Topology file:     intel/sof-tplg/sof-cml-rt711-rt1308-rt715.tplg
+[    4.664062] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware info: version 2:2:0-57864
+[    4.664064] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware: ABI 3:22:1 Kernel ABI 3:23:1
+[    4.797863] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware info: version 2:2:0-57864
+[    4.797865] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware: ABI 3:22:1 Kernel ABI 3:23:1
+[    4.815651] sof-audio-pci-intel-cnl 0000:00:1f.3: Topology: ABI 3:22:1 Kernel ABI 3:23:1
+
+===================== dmesg: firmware =====================
+[    1.102726] wmi_bus wmi_bus-PNP0C14:03: [Firmware Bug]: WQBC data block query control method not found
+[    2.947664] i915 0000:00:02.0: [drm] Finished loading DMC firmware i915/kbl_dmc_ver1_04.bin (v1.4)
+[    3.673881] systemd[1]: Clear Stale Hibernate Storage Info was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67).
+[    4.662635] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware paths/files for ipc type 0:
+[    4.662638] sof-audio-pci-intel-cnl 0000:00:1f.3:  Firmware file:     intel/sof/sof-cml.ri
+[    4.664062] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware info: version 2:2:0-57864
+[    4.664064] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware: ABI 3:22:1 Kernel ABI 3:23:1
+[    4.797863] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware info: version 2:2:0-57864
+[    4.797865] sof-audio-pci-intel-cnl 0000:00:1f.3: Firmware: ABI 3:22:1 Kernel ABI 3:23:1
